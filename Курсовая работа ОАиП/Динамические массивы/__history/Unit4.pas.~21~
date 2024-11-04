@@ -1,0 +1,726 @@
+unit Unit4;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Grids,
+  Vcl.ExtCtrls, Vcl.ComCtrls,System.Generics.Collections, Vcl.Imaging.pngimage;
+
+type
+  Tform4 = class(TForm)
+    StringGrid: TStringGrid;
+    Name: TLabel;
+    Array_Type: TPanel;
+    Type_Text: TLabel;
+    one_dimensional: TPanel;
+    two_dimensional: TPanel;
+    one_dimensional_set: TPanel;
+    UpDown1: TUpDown;
+    columns: TEdit;
+    Exit_Button: TPanel;
+    Label_Count: TLabel;
+    Label_Data: TLabel;
+    ComboBox1: TComboBox;
+    Gen_Button: TPanel;
+    Label2: TLabel;
+    UpDown2: TUpDown;
+    rows: TEdit;
+    Label1: TLabel;
+    Panel1: TPanel;
+    Sort_panel: TPanel;
+    Label3: TLabel;
+    ComboBox2: TComboBox;
+    Sort_button: TPanel;
+    ComboBox3: TComboBox;
+    Find_Panel: TPanel;
+    Label_number: TLabel;
+    Edit_Find: TEdit;
+    Label_conclusion: TLabel;
+    Find_Panel2: TPanel;
+    Memo_find: TMemo;
+    ComboBox_Find: TComboBox;
+    Find_TypeLabel: TLabel;
+    Find_Button: TPanel;
+    Panel2: TPanel;
+    Edit_panel: TPanel;
+    Input_ind_Label: TLabel;
+    Input_ind_edit: TEdit;
+    element_label: TLabel;
+    Label_output: TLabel;
+    Edit_Panel2: TPanel;
+    Show_button: TPanel;
+    execute_button: TPanel;
+    Move_Label: TLabel;
+    ComboBox_action: TComboBox;
+    IndexLabel: TLabel;
+    ValueLabel: TLabel;
+    IndexEdit: TEdit;
+    ValueEdit: TEdit;
+    Background: TImage;
+    Image1: TImage;
+    procedure Exit_ButtonClick(Sender: TObject);
+    procedure Gen_ButtonClick(Sender: TObject);
+    procedure UpDown1Click(Sender: TObject; Button: TUDBtnType);
+    procedure one_dimensionalClick(Sender: TObject);
+    procedure two_dimensionalClick(Sender: TObject);
+    procedure UpDown2Click(Sender: TObject; Button: TUDBtnType);
+    procedure StringGridSetEditText(Sender: TObject; ACol, ARow: Integer;
+      const Value: string);
+    procedure FormShow(Sender: TObject);
+    procedure SetMenuID(NewMenuID: Integer);
+    procedure Sort_buttonClick(Sender: TObject);
+    procedure Sort();
+    procedure SortDescending();
+    procedure SelectionSort_Increase();
+    procedure SelectionSort_Decreasing();
+    procedure Bubblesort_Increase();
+    procedure DisplayGrid();
+    procedure Bubblesort_Decreasing();
+    procedure StringGridDrawCell(Sender: TObject; ACol, ARow: Integer;
+      Rect: TRect; State: TGridDrawState);
+    procedure FormHide(Sender: TObject);
+    procedure Find_ButtonClick(Sender: TObject);
+    procedure Element_Iteration();
+    procedure Binary_search();
+    procedure ComboBox_FindChange(Sender: TObject);
+    procedure Show_buttonClick(Sender: TObject);
+    procedure execute_buttonClick(Sender: TObject);
+    procedure ComboBox_actionChange(Sender: TObject);
+    procedure Panel1Click(Sender: TObject);
+    procedure CreateParams(var Params: TCreateParams) ; override;
+  private
+    { Private declarations }
+    procedure UpdateForm;
+  public
+    { Public declarations }
+  end;
+type
+  int=integer;
+  rel=real;
+  chr=char;
+var
+  form4: Tform4;
+  Arr_ID:integer;
+  Menu_ID:integer;
+  index, CompareIndex1, CompareIndex2:integer;
+implementation
+
+{$R *.dfm}
+
+uses Unit3, Theory_Form;
+
+procedure Tform4.Exit_ButtonClick(Sender: TObject);
+begin
+form3.visible:=true;
+form4.Visible:=false;
+array_type.Visible:=false;
+Sort_panel.Visible:=false;
+combobox3.Visible:=false;
+end;
+
+procedure Tform4.Find_ButtonClick(Sender: TObject);
+begin
+memo_find.lines.clear;
+if Combobox_find.ItemIndex=0 then
+  begin
+    Element_Iteration();
+  end
+  else
+  begin
+     binary_search();
+  end;
+
+end;
+
+procedure Tform4.FormHide(Sender: TObject);
+var
+i,j:integer;
+begin
+for i := 0 to 11 do
+  for j := 0 to 3 do
+   stringgrid.Cells[i,j]:='';
+stringgrid.RowCount:=1;
+StringGrid.Height:=55;
+label1.Visible:=false;
+rows.Visible:=false;
+updown2.Visible:=false;
+Sort_panel.Visible:=false;
+combobox3.visible:=false;
+Combobox_Find.Visible:=false;
+Find_Panel.visible:=false;
+Find_Panel2.Visible:=false;
+combobox1.Enabled:=true;
+Edit_panel.Visible:=false;
+Edit_panel2.Visible:=false;
+valueedit.enabled:=true;
+end;
+
+procedure Tform4.FormShow(Sender: TObject);
+begin
+compareindex1:=-1;
+compareindex2:=-1;
+UpdateForm;
+end;
+procedure Tform4.SetMenuID(NewMenuID: Integer);
+begin
+  Menu_ID := NewMenuID;
+  UpdateForm;
+end;
+
+procedure Tform4.Show_buttonClick(Sender: TObject);
+var i:integer;
+begin
+  i:=StrToInt(Input_ind_edit.text);
+  if (i<=stringgrid.colcount) and (i>0) then
+  begin
+    dec(i);
+    Label_output.Caption:=stringgrid.Cells[i,0]
+  end
+  else
+  showmessage('Вы вышли за диапазон!')
+end;
+
+procedure Tform4.Element_Iteration();
+var complete: Boolean;
+i:integer;
+begin
+  complete:=false;
+  i:=0;
+  repeat
+    Compareindex1:=i;
+    displayGrid();
+    if stringgrid.Cells[i,0]=Edit_Find.text then
+    complete:=true
+    else i:=i+1;
+    compareindex1:=-1;
+    DisplayGrid();
+  until (i>stringgrid.ColCount-1) or complete;
+  if complete then Memo_find.Lines[0]:='Совпадение с элементом номер '+ IntToStr(i+1)
+  else Memo_find.Lines[0]:='Совпадений нет';
+end;
+
+procedure Tform4.execute_buttonClick(Sender: TObject);
+var i:integer;
+begin
+  i:=StrToInt(IndexEdit.Text);
+  dec(i);
+  if combobox_action.itemindex=0 then
+    begin
+       stringgrid.Cells[i,0]:=valueedit.Text;
+    end
+  else
+  begin
+    stringgrid.Cells[i,0]:='';
+  end;
+
+
+
+end;
+
+procedure TForm4.Binary_search();
+var top,bottom,operations,avg:integer;
+complete:Boolean;
+begin
+    Sort();//отсортирую массив
+    top:=0;
+    bottom:=stringgrid.ColCount-1;
+    complete:=false;
+    operations:=0;//задаем количество сравненией '0'
+    repeat
+      compareindex1:=top;
+      compareindex2:=bottom;
+      displaygrid();
+      avg:=(bottom+top) div 2;
+      inc(operations);
+      if stringgrid.Cells[avg,0]=Edit_Find.text then
+      complete:=true
+      else
+      begin
+        if StrToInt(Edit_Find.text)<StrToInt(stringgrid.Cells[avg,0]) then
+          bottom:=avg-1
+          else
+          top:=avg+1;
+      end;
+      compareindex1:=-1;
+      compareindex2:=-1;
+      displaygrid();
+    until (top>bottom) or complete;
+    inc(avg);
+    if complete then Memo_find.Lines[0]:='Совпадение с элементом номер '+ IntToStr(avg)+'. Выполнено '+IntToStr(operations)+' сравнений.'
+  else Memo_find.Lines[0]:='Элемент не найден';
+end;
+
+procedure Tform4.Sort();
+var n,i:integer;
+List: TList<Integer>;
+begin
+  List:=TList<Integer>.Create;
+  n:=updown1.position;
+  for i := 0 to n-1 do
+    List.Add(StrToInt(stringgrid.Cells[i,0]));
+    List.Sort;
+  for i:=0 to n-1 do
+    stringgrid.Cells[i,0]:=IntTostr(List[i]);
+    List.Free;
+end;
+procedure Tform4.SelectionSort_Increase(); //метод прямого выбора по возрастанию
+var i,j,min,ind:integer;
+temp:string;
+begin
+  for i:=0 to Stringgrid.Colcount-1 do//берем первый элемент
+    begin
+      min:=StrToInt(stringgrid.cells[i,0]);//задаем первый элемент как минимальный
+      ind:=i;//задаем первый индекс как минимальный
+      for j:=i+1 to Stringgrid.Colcount-1 do
+      begin
+        CompareIndex1 := i;
+        CompareIndex2 := j;
+        DisplayGrid();
+        if StrToInt(Stringgrid.Cells[j,0])<min then//сравнение элементов с минимальным
+        begin
+          min:=StrToInt(Stringgrid.Cells[j,0]);
+          ind:=j;
+        end;
+      end;
+      temp:=stringgrid.Cells[i,0];
+      stringgrid.Cells[i,0]:=Stringgrid.Cells[ind,0];
+      stringgrid.Cells[ind,0]:=temp;//меняем местами элементы
+
+    //сброс подсветки
+    compareindex1:=-1;
+    compareindex2:=-1;
+    DisplayGrid();
+  end;
+end;
+
+procedure Tform4.SelectionSort_Decreasing(); //метод прямого выбора по убыванию
+var i,j,min,ind:integer;
+temp:string;
+begin
+  for i:=0 to Stringgrid.Colcount-1 do//берем первый элемент
+    begin
+      min:=StrToInt(stringgrid.cells[i,0]);//задаем первый элемент как минимальный
+      ind:=i;//задаем первый индекс как минимальный
+      for j:=i+1 to Stringgrid.Colcount-1 do
+      begin
+        CompareIndex1 := i;
+        CompareIndex2 := j;
+        DisplayGrid();
+        if StrToInt(Stringgrid.Cells[j,0])>min then//сравнение элементов с минимальным
+        begin
+          min:=StrToInt(Stringgrid.Cells[j,0]);
+          ind:=j;
+        end;
+      end;
+      temp:=stringgrid.Cells[i,0];
+      stringgrid.Cells[i,0]:=Stringgrid.Cells[ind,0];
+      stringgrid.Cells[ind,0]:=temp;//меняем местами элементы
+
+    //сброс подсветки
+    compareindex1:=-1;
+    compareindex2:=-1;
+    DisplayGrid();
+  end;
+end;
+
+procedure Tform4.SortDescending();
+var n,i:integer;
+List: TList<Integer>;
+begin
+  List:=TList<Integer>.Create;
+  n:=updown1.position;
+  for i := 0 to n-1 do
+    List.Add(StrToInt(stringgrid.Cells[i,0]));
+    List.Sort;
+    List.Reverse;
+  for i:=0 to n-1 do
+    stringgrid.Cells[i,0]:=IntTostr(List[i]);
+    List.Free;
+end;
+
+procedure Tform4.Bubblesort_Increase();
+var
+  i,j:integer;
+  temp: String;
+  Swapped: Boolean;
+begin
+  for i := 0 to StringGrid.ColCount - 2 do
+  begin
+    Swapped := False;
+    for j := 0 to StringGrid.ColCount - 2 - i do
+    begin
+      compareindex1:=j;
+      compareindex2:=j+1;
+      // Отображение текущего состояния StringGrid
+      Displaygrid();
+      if StringGrid.Cells[j, 0] > StringGrid.Cells[j + 1, 0] then
+      begin
+        // Обмен значениями
+        temp := StringGrid.Cells[j, 0];
+        StringGrid.Cells[j, 0] := StringGrid.Cells[j + 1, 0];
+        StringGrid.Cells[j + 1, 0] := temp;
+
+        Swapped := True;
+      end;
+      //сброс подсветки
+      compareindex1:=-1;
+      compareindex2:=-1;
+      Displaygrid();
+    end;
+    // Если не было обменов, выходим из цикла
+    if not Swapped then
+      Break;
+  end;
+end;
+
+
+procedure Tform4.ComboBox_actionChange(Sender: TObject);
+begin
+  if combobox_action.ItemIndex=1 then
+  begin
+    valueedit.Enabled:=false;
+  end
+  else
+  valueedit.Enabled:=true;
+end;
+
+procedure Tform4.ComboBox_FindChange(Sender: TObject);
+begin
+if combobox_find.itemindex=1 then
+  begin
+    combobox1.ItemIndex:=0;
+    combobox1.Enabled:=false;
+  end
+  else
+  begin
+    combobox1.enabled:=true;
+  end;
+end;
+
+procedure Tform4.Bubblesort_Decreasing();
+var
+  i,j:integer;
+  temp: String;
+  Swapped: Boolean;
+begin
+  for i := 0 to StringGrid.ColCount - 2 do
+  begin
+    Swapped := False;
+    for j := 0 to StringGrid.ColCount - 2 - i do
+    begin
+      compareindex1:=j;
+      compareindex2:=j+1;
+      // Отображение текущего состояния StringGrid
+      Displaygrid();
+      if StringGrid.Cells[j, 0] < StringGrid.Cells[j + 1, 0] then
+      begin
+        // Обмен значениями
+        temp := StringGrid.Cells[j, 0];
+        StringGrid.Cells[j, 0] := StringGrid.Cells[j + 1, 0];
+        StringGrid.Cells[j + 1, 0] := temp;
+
+        Swapped := True;
+      end;
+      //сброс подсветки
+      compareindex1:=-1;
+      compareindex2:=-1;
+      Displaygrid();
+    end;
+    // Если не было обменов, выходим из цикла
+    if not Swapped then
+      Break;
+  end;
+end;
+
+
+procedure TForm4.DisplayGrid();
+begin
+  StringGrid.invalidate; //Обновление содержимого stringgrid
+  Application.ProcessMessages;//обработка всех сообщений в очереди
+  sleep(500);//задержка 500 мс между проходами элементов
+end;
+
+procedure Tform4.UpdateForm;
+begin
+if Menu_ID=1 then //если нажата кнопка то подсвечиваются соответсвующие элементы
+begin
+  Name.Caption:='Создание массива';
+  Label_Data.Caption:='Выбор типа данных массива:';
+  array_type.Visible:=true;
+end
+else
+if Menu_ID=2 then
+begin
+  Name.Caption:='Сортировка массива';
+  Label_Data.Caption:='Выбор типа сортировки массива:';
+  combobox3.visible:=true;
+  Sort_panel.Visible:=true;
+  Arr_ID:=0;
+  combobox1.ItemIndex:=0;
+end
+else
+if Menu_ID=3 then
+begin
+  Name.Caption:='Поиск в массиве';
+  Label_Data.Caption:='Выбор типа данных массива:';
+  Find_panel.Visible:=True;
+  Find_panel2.Visible:=true;
+  Combobox_Find.Visible:=True;
+  Arr_ID:=0;
+  index:=0;
+end
+else
+if Menu_ID=4 then
+  begin
+    Name.Caption:='Чтение и изменение массива';
+    Label_Data.Caption:='Выбор типа данных массива:';
+    Edit_panel.Visible:=true;
+    Edit_panel2.Visible:=true;
+  end;
+
+end;
+
+procedure Tform4.Gen_ButtonClick(Sender: TObject);
+var n,m,i,j:integer;
+a:array of integer;
+b:array of real;
+c:array of char;
+a1:array of array of integer;
+b1:array of array of real;
+c1:array of array of char;
+begin
+randomize;
+n:=updown1.Position;
+m:=updown2.Position;
+index:=combobox1.ItemIndex;
+if Arr_ID=0 then
+begin
+ //одномерный массив
+  setlength(a,n);
+  setlength(b,n);
+  setlength(c,n);
+  if index=0 then//заполнение целыми числами
+  begin
+  for i:=0 to n-1 do
+    begin
+      a[i]:=random(100);
+      stringgrid.cells[i,0]:=IntToStr(a[i]);
+    end;
+  end
+  else
+  if index=1 then //заполнение вещественными числами
+  begin
+    for i:=0 to n-1 do
+    begin
+      b[i]:=random;
+      stringgrid.cells[i,0]:=FloatToStrF(b[i],ffFixed, 8, 2);
+    end;
+  end
+  else
+  if index=2 then //заполнение символами
+  begin
+    for i:=0 to n-1 do
+    begin
+      c[i]:=chr(random(26)+65);
+      stringgrid.cells[i,0]:=c[i];
+    end;
+  end;
+end
+else
+begin  //двумерный массив
+  setlength(a1,n,m);
+  setlength(b1,n,m);
+  setlength(c1,n,m);
+  if index=0 then //заполнение целыми числами
+  begin
+    for i:=0 to n-1 do
+      for j:=0 to m-1 do
+      begin
+        a1[i,j]:=random(100);
+        stringgrid.cells[i,j]:=IntToStr(a1[i,j]);
+      end;
+  end
+  else
+  if index=1 then //заполнение вещественными числами
+  begin
+    for i:=0 to n-1 do
+      for j := 0 to m-1 do
+      begin
+        b1[i,j]:=random;
+        stringgrid.cells[i,j]:=FloatToStrF(b1[i,j],ffFixed, 8, 2);
+      end;
+    end
+  else
+  if index=2 then //заполнение символами
+  begin
+    for i:=0 to n-1 do
+      for j := 0 to m-1 do
+        begin
+          c1[i,j]:=chr(random(26)+65);
+          stringgrid.cells[i,j]:=c1[i,j];
+        end;
+    end;
+  end;
+end;
+
+procedure Tform4.one_dimensionalClick(Sender: TObject);
+begin
+  label1.Visible:=false;
+  rows.Visible:=false;
+  updown2.Visible:=false;
+  stringgrid.RowCount:=1;
+  Arr_ID:=0;
+end;
+
+
+procedure Tform4.Panel1Click(Sender: TObject);
+begin
+form5.show;
+end;
+
+procedure Tform4.Sort_buttonClick(Sender: TObject);
+var n,i:integer;
+List: TList<Integer>;
+begin
+  if combobox3.ItemIndex=0 then
+  begin
+    if combobox2.ItemIndex=0 then
+      begin
+        Sort();
+      end
+    else
+    begin
+      SortDescending();
+    end;
+  end
+  else
+  if combobox3.ItemIndex=1 then
+  begin
+    if combobox2.ItemIndex=0 then
+    begin
+      SelectionSort_Increase();
+    end
+    else
+    begin
+      SelectionSort_Decreasing();
+    end;
+  end
+  else
+  if combobox3.ItemIndex=2 then
+  begin
+    if combobox2.ItemIndex=0 then
+      begin
+        Bubblesort_Increase();
+      end
+      else
+      begin
+        Bubblesort_Decreasing();
+      end;
+  end;
+end;
+
+
+procedure Tform4.StringGridDrawCell(Sender: TObject; ACol, ARow: Integer;
+  Rect: TRect; State: TGridDrawState);
+begin
+if (ACol=Compareindex1) or (ACol=Compareindex2) then
+   begin
+    stringgrid.Canvas.brush.Color:=clYellow;
+    stringgrid.Canvas.FillRect(rect);
+   end;
+   StringGrid.Canvas.TextRect(Rect, Rect.Left + 6, Rect.Top + 18, StringGrid.Cells[ACol, ARow]);
+end;
+
+procedure Tform4.StringGridSetEditText(Sender: TObject; ACol, ARow: Integer;
+  const Value: string);
+var num,i:integer;
+num1:Double;
+num2:char;
+Letters:boolean;
+begin //проверка допустимости вводимого пользователем типа данных
+  if combobox1.ItemIndex=0 then
+  begin
+    if not TryStrToInt(value,num) then
+    begin
+      ShowMessage('Пожалуйста, введите целое число.');
+      StringGrid.Cells[ACol, ARow] := '';  // Очистка ячейки, если введено не число
+    end;
+  end
+else
+  if combobox1.ItemIndex=1 then
+  begin
+    if not TryStrToFloat(value,num1) then
+    begin
+    ShowMessage('Пожалуйста, введите вещественное число.');
+    StringGrid.Cells[ACol, ARow] := '';  // Очистка ячейки, если введено не число
+    end;
+  end
+else
+  if combobox1.ItemIndex=2 then
+  begin
+    Letters:=True;
+    for i := 1 to length(value) do
+    begin
+      if not CharInSet(Value[i], ['A'..'Z', 'a'..'z']) then
+      begin
+        Letters := False;
+        Break;
+      end;
+    end;
+    if not Letters then
+    begin
+      ShowMessage('Пожалуйста, введите только буквы.');
+      StringGrid.Cells[ACol, ARow] := '';  // Очистка ячейки, если введено не буквенное значение
+    end;
+  end;
+end;
+
+procedure Tform4.two_dimensionalClick(Sender: TObject);
+begin
+label1.Visible:=true;
+rows.Visible:=true;
+updown2.Visible:=true;
+Arr_ID:=1;
+stringgrid.RowCount:=2;
+stringgrid.Height:=110;
+end;
+
+procedure Tform4.UpDown1Click(Sender: TObject; Button: TUDBtnType);
+begin
+ StringGrid.ColCount:=updown1.position;
+ case stringgrid.colcount of  //изменяю длину поля
+  2:StringGrid.Width:=110;
+  3:StringGrid.Width:=165;
+  4:StringGrid.Width:=220;
+  5:StringGrid.Width:=275;
+  6:StringGrid.Width:=330;
+  7:StringGrid.Width:=385;
+  8:StringGrid.Width:=440;
+  9:StringGrid.Width:=495;
+  10:StringGrid.Width:=550;
+  11:StringGrid.Width:=605;
+  12:StringGrid.Width:=660;
+ end;
+
+end;
+
+procedure Tform4.UpDown2Click(Sender: TObject; Button: TUDBtnType);
+begin
+  StringGrid.RowCount:=updown2.position;
+  case StringGrid.RowCount of  //изменяю высоту поля
+    1:StringGrid.Height:=55;
+    2:StringGrid.Height:=110;
+    3:StringGrid.Height:=165;
+    4:StringGrid.Height:=220;
+  end;
+end;
+
+procedure Tform4.CreateParams(var Params: TCreateParams) ;// процедура для того чтобы ярлык в панели задач не пропадал
+begin
+  inherited;
+  Params.ExStyle := Params.ExStyle or WS_EX_APPWINDOW;
+  Params.WndParent := 0;
+end;
+
+end.

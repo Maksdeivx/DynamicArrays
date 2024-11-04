@@ -1,0 +1,80 @@
+unit Unit3;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
+
+type
+  TForm3 = class(TForm)
+    CreateArr_button: TPanel;
+    SortArr_Button: TPanel;
+    FindArr_Button: TPanel;
+    EditArr_Button: TPanel;
+    BackToHome_Button: TPanel;
+    procedure CreateArr_buttonClick(Sender: TObject);
+    procedure BackToHome_ButtonClick(Sender: TObject);
+    procedure SortArr_ButtonClick(Sender: TObject);
+    procedure FindArr_ButtonClick(Sender: TObject);
+    procedure EditArr_ButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit1,Unit4;
+
+procedure TForm3.BackToHome_ButtonClick(Sender: TObject);
+begin
+MainMenu.show;
+form3.close;
+end;
+
+procedure TForm3.CreateArr_buttonClick(Sender: TObject);
+begin
+if not Assigned(form4) then
+    form4 := Tform4.Create(Application);  // Создать форму, если она еще не создана
+
+form4.SetMenuID(1);  // Установить Menu_ID
+form4.show;
+form3.hide;
+end;
+
+procedure TForm3.EditArr_ButtonClick(Sender: TObject);
+begin
+if not Assigned(form4) then
+  form4 := Tform4.Create(Application);  // Создать форму, если она еще не создана
+form4.SetMenuID(4);
+form4.Visible:=true;
+form3.Visible:=false;
+end;
+
+procedure TForm3.FindArr_ButtonClick(Sender: TObject);
+begin
+if not Assigned(form4) then
+    form4 := Tform4.Create(Application);  // Создать форму, если она еще не создана
+form4.SetMenuID(3);
+form4.Visible:=true;
+form3.Visible:=false;
+end;
+
+procedure TForm3.SortArr_ButtonClick(Sender: TObject);
+begin
+if not Assigned(form4) then
+    form4 := Tform4.Create(Application);  // Создать форму, если она еще не создана
+
+form4.SetMenuID(2);  // Установить Menu_ID
+form4.Visible:=true;
+form3.Visible:=false;
+end;
+
+end.

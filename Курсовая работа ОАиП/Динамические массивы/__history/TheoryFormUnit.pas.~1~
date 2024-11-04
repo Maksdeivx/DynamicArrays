@@ -1,0 +1,64 @@
+unit TheoryFormUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.OleCtrls, SHDocVw,
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage;
+
+type
+  TForm5 = class(TForm)
+    Exit_button: TPanel;
+    WebBrowser1: TWebBrowser;
+    Name_Label: TLabel;
+    Image1: TImage;
+    Image2: TImage;
+    procedure FormShow(Sender: TObject);
+    procedure SetTheoryID(NewTheoryID: Integer);
+    procedure Exit_buttonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+  Theory_ID:integer;
+
+implementation
+
+{$R *.dfm}
+
+uses ArrayFormUnit, SectionsFormUnit;
+
+procedure Tform5.SetTheoryID(NewTheoryID: Integer);
+begin
+  Theory_ID := NewTheoryID;
+end;
+
+procedure TForm5.Exit_buttonClick(Sender: TObject);
+begin
+form5.Close;
+end;
+
+procedure TForm5.FormShow(Sender: TObject);
+begin
+  if Theory_ID=0 then
+    Name_Label.Caption:='Динамические массивы'
+  else
+    if Theory_ID=1 then
+      Name_Label.Caption:='Создание массива'
+    else
+      if Theory_ID=2 then
+        Name_Label.Caption:='Сортировка массива'
+      else
+      if Theory_ID=3 then
+        Name_Label.Caption:='Поиск в массиве'
+      else
+        if Theory_ID=4 then
+          Name_Label.Caption:='Чтение и изменение элементов'
+end;
+
+end.

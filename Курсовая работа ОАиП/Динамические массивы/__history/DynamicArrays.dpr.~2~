@@ -1,0 +1,22 @@
+program DynamicArrays;
+
+uses
+  Vcl.Forms,
+  Unit1 in 'Unit1.pas' {MainMenu},
+  Unit2 in 'Unit2.pas' {Form2},
+  Unit3 in 'Unit3.pas' {Form3},
+  Unit4 in 'Unit4.pas' {form4},
+  Theory_Form in 'Theory_Form.pas' {Form5};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TMainMenu, MainMenu);
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(Tform4, form4);
+  Application.CreateForm(TForm5, Form5);
+  Application.Run;
+end.

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.592,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Code_Form.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit6.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.305,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\SectionsFormUnit.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit3.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.312,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\MainFormUnit.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.696,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\CodeFormUnit.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Code_Form.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.055,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\ArrayForm.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit4.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.923,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\SplashFormUnit.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.873,C:\Users\maksk\OneDrive\Рабочий стол\Проект курсовая\Unit3.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\проект\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.592,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Code_Form.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit6.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.873,C:\Users\maksk\OneDrive\Рабочий стол\Проект курсовая\Unit3.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\проект\Unit3.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.982,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit5.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Theory_Form.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.055,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\ArrayForm.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit4.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.651,C:\Users\maksk\OneDrive\Рабочий стол\Проект курсовая\Unit1.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\проект\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.759,=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit5.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.982,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit5.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Theory_Form.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.696,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\CodeFormUnit.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Code_Form.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.315,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\TheoryFormUnit.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Theory_Form.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.663,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\ArrayFormUnit.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\ArrayForm.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.158,C:\Users\maksk\OneDrive\Рабочий стол\Проект курсовая\Unit2.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\проект\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.377,C:\Users\maksk\OneDrive\Рабочий стол\Проект курсовая\Unit4.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\проект\Unit4.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.305,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\SectionsFormUnit.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.651,C:\Users\maksk\OneDrive\Рабочий стол\Проект курсовая\Unit1.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\проект\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.315,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\TheoryFormUnit.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Theory_Form.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.663,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\ArrayFormUnit.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\ArrayForm.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.120,=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit6.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.377,C:\Users\maksk\OneDrive\Рабочий стол\Проект курсовая\Unit4.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\проект\Unit4.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.923,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\SplashFormUnit.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.312,C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\MainFormUnit.pas=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\Проект курсовая\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.325,C:\Users\maksk\OneDrive\Рабочий стол\Проект курсовая\DynamicArrays.dproj=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\проект\project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.158,C:\Users\maksk\OneDrive\Рабочий стол\Проект курсовая\Unit2.dfm=C:\Users\maksk\OneDrive\Рабочий стол\Учеба\Курсовая работа ОАиП\проект\Unit2.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

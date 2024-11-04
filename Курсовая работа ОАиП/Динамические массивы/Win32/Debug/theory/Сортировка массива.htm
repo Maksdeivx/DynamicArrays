@@ -1,0 +1,2316 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="Сортировка%20массива.files/filelist.xml">
+<link rel=Edit-Time-Data href="Сортировка%20массива.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Максим Козейко</o:Author>
+  <o:LastAuthor>Максим Козейко</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>32</o:TotalTime>
+  <o:Created>2024-06-22T13:59:00Z</o:Created>
+  <o:LastSaved>2024-06-22T14:01:00Z</o:LastSaved>
+  <o:Pages>5</o:Pages>
+  <o:Words>797</o:Words>
+  <o:Characters>4543</o:Characters>
+  <o:Lines>37</o:Lines>
+  <o:Paragraphs>10</o:Paragraphs>
+  <o:CharactersWithSpaces>5330</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="Сортировка%20массива.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="Сортировка%20массива.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1040178053 9 0 511 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610610945 1073750107 16 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536869121 64767 1 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Подзаголовок Знак";
+	margin:0cm;
+	text-indent:63.0pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-language:ZH-CN;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+span.a
+	{mso-style-name:"Подзаголовок Знак";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Подзаголовок;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:ZH-CN;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:14.0pt;
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:339352894;
+	mso-list-template-ids:14292566;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:1291207346;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-856794626 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:1516194340;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1017042408 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-language:EN-US;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1028"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink=purple style='tab-interval:35.4pt;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;text-indent:
+42.55pt;line-height:18.0pt;mso-line-height-rule:exactly'><b>Сортировка</b>
+является важным аспектом работы с массивами в программировании, так как она
+позволяет организовать данные в определенном порядке, что облегчает поиск,
+вставку и удаление элементов. В языке программирования <span lang=EN-US
+style='mso-ansi-language:EN-US'>Pascal</span>, как и в любом другом языке,
+существует множество способов сортировки массивов. Рассмотрим основные из них:
+сортировка обменом (пузырьком), встроенной процедурой и сортировка методом
+выбора.</p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
+text-indent:42.55pt;line-height:18.0pt;mso-line-height-rule:exactly'><b>Сортировка
+методом выбора</b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin:0cm;mso-add-space:auto;
+text-align:justify;text-indent:42.55pt;line-height:18.0pt;mso-line-height-rule:
+exactly;mso-list:l2 level1 lfo2'><![if !supportLists]><span style='font-family:
+Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>в массиве ищется минимальный элемент и ставится
+на первое место (меняется местами с <span class=GramE>A[</span>1]);</p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0cm;mso-add-space:auto;
+text-align:justify;text-indent:42.55pt;line-height:18.0pt;mso-line-height-rule:
+exactly;mso-list:l1 level1 lfo4'><![if !supportLists]><span style='font-family:
+Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte vml 1]><o:wrapblock><v:shapetype
+  id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+  path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+  <v:stroke joinstyle="miter"/>
+  <v:formulas>
+   <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+   <v:f eqn="sum @0 1 0"/>
+   <v:f eqn="sum 0 0 @1"/>
+   <v:f eqn="prod @2 1 2"/>
+   <v:f eqn="prod @3 21600 pixelWidth"/>
+   <v:f eqn="prod @3 21600 pixelHeight"/>
+   <v:f eqn="sum @0 0 1"/>
+   <v:f eqn="prod @6 1 2"/>
+   <v:f eqn="prod @7 21600 pixelWidth"/>
+   <v:f eqn="sum @8 21600 0"/>
+   <v:f eqn="prod @7 21600 pixelHeight"/>
+   <v:f eqn="sum @10 21600 0"/>
+  </v:formulas>
+  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+  <o:lock v:ext="edit" aspectratio="t"/>
+ </v:shapetype><v:shape id="Рисунок_x0020_1" o:spid="_x0000_s1027" type="#_x0000_t75"
+  style='position:absolute;left:0;text-align:left;margin-left:-15.35pt;
+  margin-top:57.3pt;width:467.75pt;height:144.75pt;z-index:251658240;
+  visibility:visible;mso-wrap-style:square;mso-width-percent:0;
+  mso-height-percent:0;mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;
+  mso-wrap-distance-right:9pt;mso-wrap-distance-bottom:0;
+  mso-position-horizontal:absolute;mso-position-horizontal-relative:text;
+  mso-position-vertical:absolute;mso-position-vertical-relative:text;
+  mso-width-percent:0;mso-height-percent:0;mso-width-relative:page;
+  mso-height-relative:page'>
+  <v:imagedata src="Сортировка%20массива.files/image001.png" o:title=""/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+ relative;z-index:251658240;left:-18px;top:0px;width:780px;height:241px'><img
+ width=624 height=193 src="Сортировка%20массива.files/image002.png" v:shapes="Рисунок_x0020_1"></span><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+среди оставшихся элементов также производится поиск минимального, который
+ставится на второе место (меняется местами с <span class=GramE>A[</span>2]) и
+т.д.</p>
+
+<p class=MsoSubtitle style='text-align:justify;text-indent:0cm'><u><span
+style='mso-bidi-font-size:14.0pt;color:red'>Пример №1 {Сортировка массива по
+возрастанию методом прямого <span class=GramE>выбора }</span><o:p></o:p></span></u></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-size:11.0pt;line-height:105%'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span class=SpellE><b><span style='font-family:"Courier New";
+color:black'>program</span></b></span><b><span style='font-family:"Courier New";
+color:black'> </span></b><span class=SpellE><span style='font-family:"Courier New";
+color:black'>sortvybor</span></span><span style='font-family:"Courier New";
+color:black'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span class=SpellE><b><span style='font-family:"Courier New";
+color:black'>const</span></b></span><b><span style='font-family:"Courier New";
+color:black'> </span></b><span style='font-family:"Courier New";color:black'>N
+= </span><span style='font-family:"Courier New";color:darkgreen'>10</span><span
+style='font-family:"Courier New";color:black'>;</span><span style='font-family:
+"Courier New";color:green'>//</span><span style='font-size:12.0pt;font-family:
+"Courier New";color:green'>задаём количество элементов массива</span><span
+style='font-family:"Courier New";color:green'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:green'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'>var<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span></span></b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>a:
+<b>array</b> <b>of </b></span><span lang=EN-US style='font-family:"Courier New";
+color:blue;mso-ansi-language:EN-US'>integer</span><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>;</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>// </span><span style='font-size:12.0pt;font-family:
+"Courier New";color:green'>описание</span><span style='font-size:12.0pt;
+font-family:"Courier New";color:green;mso-ansi-language:EN-US'> </span><span
+style='font-size:12.0pt;font-family:"Courier New";color:green'>массива</span><span
+style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'> <span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span></span><span
+class=SpellE><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>i</span></span><span lang=EN-US style='font-family:
+"Courier New";color:black;mso-ansi-language:EN-US'>, <span class=SpellE><span
+class=GramE>j,min</span></span>, <span class=SpellE>ind:<span style='color:
+blue'>integer</span></span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'>begin</span></b><b><span style='font-family:
+"Courier New";color:black'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span style='font-family:"Courier New";color:black'><span
+style='mso-spacerun:yes'>  </span></span></b><span class=SpellE><b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>setlength</span></b></span><b><span
+style='font-family:"Courier New";color:black'>(</span></b><span class=GramE><b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>a</span></b><b><span
+style='font-family:"Courier New";color:black'>,</span></b><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>N</span></b></span><b><span
+style='font-family:"Courier New";color:black'>);<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:184.3pt;text-indent:-184.3pt;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span style='font-family:"Courier New";color:black'><span
+style='mso-spacerun:yes'>  </span><span class=SpellE>for</span> </span></b><span
+class=GramE><span style='font-family:"Courier New";color:black'>i:=</span></span><span
+style='font-family:"Courier New";color:darkgreen'>0 </span><span class=SpellE><b><span
+style='font-family:"Courier New";color:black'>to</span></b></span><b><span
+style='font-family:"Courier New";color:black'> </span></b><span
+style='font-family:"Courier New";color:black'>N-1 <b>d</b></span><b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>o</span></b><b><span
+style='font-family:"Courier New";color:black'><span
+style='mso-spacerun:yes'>     </span></span></b><span style='font-size:12.0pt;
+font-family:"Courier New";color:green'>// ввод массива при помощи датчика
+случайных чисел<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:green'><span
+style='mso-spacerun:yes'>    </span></span><span style='font-family:"Courier New";
+color:black'>a[i<span class=GramE>] :</span>= <span class=SpellE>Random</span>(</span><span
+style='font-family:"Courier New";color:darkgreen'>100</span><span
+style='font-family:"Courier New";color:black'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:black'><span
+style='mso-spacerun:yes'>  </span><span class=SpellE><span class=GramE>writeln</span></span><span
+class=GramE>(</span></span><span style='font-family:"Courier New";color:blue'>'Исходный
+массив: '</span><span style='font-family:"Courier New";color:black'>);<span
+style='mso-spacerun:yes'>  </span></span><span style='font-size:12.0pt;
+font-family:"Courier New";color:green'>//вывод исходного массива<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:green'><span
+style='mso-spacerun:yes'>  </span></span><b><span lang=EN-US style='font-family:
+"Courier New";color:black;mso-ansi-language:EN-US'>for </span></b><span
+class=GramE><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>i:=</span></span><span lang=EN-US style='font-family:
+"Courier New";color:darkgreen;mso-ansi-language:EN-US'>0 </span><b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>to
+</span></b><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>N-1 <b>do<o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>    </span></span></b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>write(a[<span
+class=SpellE>i</span>],</span><span lang=EN-US style='font-family:"Courier New";
+color:blue;mso-ansi-language:EN-US'>'<span style='mso-spacerun:yes'>   </span>'</span><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>    </span></span><span
+class=SpellE><span style='font-family:"Courier New";color:black'>writeln</span></span><span
+style='font-family:"Courier New";color:black'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:black'><span
+style='mso-spacerun:yes'>  </span><span class=SpellE><span class=GramE>writeln</span></span><span
+class=GramE>(</span></span><span style='font-family:"Courier New";color:blue'>'Сортировка
+методом прямого выбора по возрастанию'</span><span style='font-family:"Courier New";
+color:black'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:black'><span
+style='mso-spacerun:yes'>  </span></span><b><span lang=EN-US style='font-family:
+"Courier New";color:black;mso-ansi-language:EN-US'>for </span></b><span
+class=GramE><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>i:=</span></span><span lang=EN-US style='font-family:
+"Courier New";color:darkgreen;mso-ansi-language:EN-US'>0 </span><b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>to
+</span></b><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>N-</span><span lang=EN-US style='font-family:"Courier New";
+color:darkgreen;mso-ansi-language:EN-US'>2 </span><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>do </span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>// </span><span style='font-size:12.0pt;font-family:
+"Courier New";color:green'>берём</span><span style='font-size:12.0pt;
+font-family:"Courier New";color:green;mso-ansi-language:EN-US'> </span><span
+style='font-size:12.0pt;font-family:"Courier New";color:green'>первый</span><span
+style='font-size:12.0pt;font-family:"Courier New";color:green;mso-ansi-language:
+EN-US'> </span><span style='font-size:12.0pt;font-family:"Courier New";
+color:green'>элемент</span><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>             </span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'> 
+</span>begin</span></b><b><span style='font-family:"Courier New";color:black'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:191.4pt;text-indent:-191.4pt;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span style='font-family:"Courier New";color:black'><span
+style='mso-spacerun:yes'>    </span></span></b><span class=SpellE><span
+class=GramE><b style='mso-bidi-font-weight:normal'><span style='font-size:18.0pt;
+font-family:"Courier New";color:red'>min</span></b></span></span><span
+class=GramE><b style='mso-bidi-font-weight:normal'><span style='font-size:18.0pt;
+font-family:"Courier New";color:red'>:=</span></b></span><b style='mso-bidi-font-weight:
+normal'><span style='font-size:18.0pt;font-family:"Courier New";color:red'>a[i];<span
+class=SpellE>ind</span> := i;//</span></b><span style='font-size:12.0pt;
+font-family:"Courier New";color:green'>Задаём минимальный элемент массива и
+переменной <span class=SpellE>ind</span> присваиваем его индекс<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:green'><span
+style='mso-spacerun:yes'>    </span></span><span class=GramE><b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>for<span
+style='mso-spacerun:yes'>  </span></span></b><span lang=EN-US style='font-family:
+"Courier New";color:black;mso-ansi-language:EN-US'>j</span></span><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>:=i+</span><span
+lang=EN-US style='font-family:"Courier New";color:darkgreen;mso-ansi-language:
+EN-US'>1 </span><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'>to </span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>N-1 <b>do<o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>          
+</span>if </span></b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'>a[j]&lt;min <b>then <o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>          
+</span>begin<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>              </span></span></b><span class=GramE><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>min
+:</span></span><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>= a[j];<span style='mso-spacerun:yes'>   </span><span
+class=SpellE>ind</span> := j;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>          
+</span><b>end</b>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>        
+</span>a[<span class=SpellE>ind</span><span class=GramE>] :</span>= a[<span
+class=SpellE>i</span>];<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>        
+</span>a[<span class=SpellE>i</span><span class=GramE>] :</span>= min; </span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>//</span><span
+style='font-size:12.0pt;font-family:"Courier New";color:green'>меняем</span><span
+style='font-size:12.0pt;font-family:"Courier New";color:green;mso-ansi-language:
+EN-US'> </span><span style='font-size:12.0pt;font-family:"Courier New";
+color:green'>элементы</span><span style='font-size:12.0pt;font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'> </span><span style='font-size:12.0pt;
+font-family:"Courier New";color:green'>местами</span><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New";color:green;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";color:green;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span></span><span class=SpellE><span
+style='font-size:12.0pt;font-family:"Courier New";color:green'>end</span></span><span
+style='font-size:12.0pt;font-family:"Courier New";color:green'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:black'><span
+style='mso-spacerun:yes'>  </span><span class=SpellE><span class=GramE>writeln</span></span><span
+class=GramE>(</span></span><span style='font-family:"Courier New";color:blue'>'Отсортированный
+массив: '</span><span style='font-family:"Courier New";color:black'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:198.5pt;text-indent:-198.5pt;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:black'><span
+style='mso-spacerun:yes'>  </span><span class=SpellE><span class=GramE><b>for</b></span></span><span
+class=GramE><b><span style='mso-spacerun:yes'>  </span></b>i</span>:=</span><span
+style='font-family:"Courier New";color:darkgreen'>0 </span><span class=SpellE><b><span
+style='font-family:"Courier New";color:black'>to</span></b></span><b><span
+style='font-family:"Courier New";color:black'> </span></b><span
+style='font-family:"Courier New";color:black'>N-1 <span class=SpellE><b>do</b></span><b><span
+style='mso-spacerun:yes'>  </span></b></span><span style='font-family:"Courier New";
+color:green'>//</span><span style='font-size:12.0pt;font-family:"Courier New";
+color:green'>организация вывода отсортированного массива<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-family:"Courier New";color:green'><span
+style='mso-spacerun:yes'>  </span></span><span lang=EN-US style='font-family:
+"Courier New";color:black;mso-ansi-language:EN-US'>write(a[<span class=SpellE>i</span>],</span><span
+lang=EN-US style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'>'
+'</span><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=SpellE>writeln</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'>end</span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>.</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='font-size:18.0pt;line-height:105%;color:red;
+mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:18.0pt;line-height:105%;color:red'>Способ</span></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:18.0pt;
+line-height:105%;color:red;mso-ansi-language:EN-US'> 2 (</span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-size:18.0pt;line-height:
+105%;color:red'>фрагмент</span></b><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:18.0pt;line-height:105%;color:red;mso-ansi-language:
+EN-US'>)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+word-break:break-all'><b><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>for</span></b><span lang=EN-US style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#333333;
+mso-ansi-language:EN-US;mso-fareast-language:RU'> <span class=SpellE><span
+class=GramE>i</span></span><span class=GramE> <span style='color:#000066'>:</span></span></span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-ansi-language:EN-US;mso-fareast-language:RU'>=</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> </span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#CC66CC;mso-ansi-language:EN-US;mso-fareast-language:RU'>0</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> </span><b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:EN-US;mso-fareast-language:RU'>to</span></b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> N</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-ansi-language:EN-US;mso-fareast-language:RU'>-</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#CC66CC;mso-ansi-language:EN-US;mso-fareast-language:RU'>2</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> </span><b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:EN-US;mso-fareast-language:RU'>do</span></b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> </span><b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:EN-US;mso-fareast-language:RU'>begin</span></b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+word-break:break-all'><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:RU'><span style='mso-spacerun:yes'>  </span></span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:PL;mso-fareast-language:RU'>min</span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-ansi-language:PL;mso-fareast-language:RU'>:=</span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:PL;mso-fareast-language:RU'> i </span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-ansi-language:PL;mso-fareast-language:RU'>;</span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:PL;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+word-break:break-all'><span lang=PL style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:PL;
+mso-fareast-language:RU'><span style='mso-spacerun:yes'>  </span></span><b><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:PL;mso-fareast-language:RU'>for</span></b><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:PL;mso-fareast-language:RU'> j</span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-ansi-language:PL;mso-fareast-language:RU'>:=</span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:PL;mso-fareast-language:RU'> i</span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-ansi-language:PL;mso-fareast-language:RU'>+</span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#CC66CC;mso-ansi-language:PL;mso-fareast-language:RU'>1</span><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:PL;mso-fareast-language:RU'> </span><b><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:PL;mso-fareast-language:RU'>to</span></b><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:PL;mso-fareast-language:RU'> N </span><b><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:PL;mso-fareast-language:RU'>do</span></b><span
+lang=PL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:PL;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+word-break:break-all'><span lang=PL style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:PL;
+mso-fareast-language:RU'><span style='mso-spacerun:yes'>    </span></span><b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:EN-US;mso-fareast-language:RU'>if</span></b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> A</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#009900;mso-ansi-language:EN-US;mso-fareast-language:RU'>[</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'>j</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#009900;mso-ansi-language:EN-US;mso-fareast-language:RU'>]</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> &lt; A</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#009900;mso-ansi-language:EN-US;mso-fareast-language:RU'>[</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'>min</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#009900;mso-ansi-language:EN-US;mso-fareast-language:RU'>]</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> </span><b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:EN-US;mso-fareast-language:RU'>then</span></b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> <span
+class=GramE>min<span style='color:#000066'>:=</span></span>j</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-ansi-language:EN-US;mso-fareast-language:RU'>;</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+word-break:break-all'><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:RU'><span style='mso-spacerun:yes'>  </span></span><b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:EN-US;mso-fareast-language:RU'>if</span></b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> min &lt;&gt; <span
+class=SpellE>i</span> </span><b><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>then</span></b><span lang=EN-US style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#333333;
+mso-ansi-language:EN-US;mso-fareast-language:RU'> </span><b><span lang=EN-US
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:EN-US;mso-fareast-language:RU'>begin</span></b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+word-break:break-all'><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:RU'><span style='mso-spacerun:yes'>    </span><span
+class=GramE>c<span style='color:#000066'>:=</span></span>A</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#009900;mso-ansi-language:EN-US;mso-fareast-language:RU'>[</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'>i</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#009900;mso-ansi-language:EN-US;mso-fareast-language:RU'>]</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-ansi-language:EN-US;mso-fareast-language:RU'>;</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+word-break:break-all'><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:RU'><span style='mso-spacerun:yes'>    </span>A</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#009900;mso-ansi-language:EN-US;mso-fareast-language:RU'>[</span><span
+class=SpellE><span lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#333333;mso-ansi-language:EN-US;mso-fareast-language:
+RU'>i</span></span><span class=GramE><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#009900;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>]</span><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#000066;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>:=</span></span><span lang=EN-US style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#333333;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>A</span><span lang=EN-US
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#009900;mso-ansi-language:EN-US;mso-fareast-language:RU'>[</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'>min</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#009900;mso-ansi-language:EN-US;mso-fareast-language:RU'>]</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-ansi-language:EN-US;mso-fareast-language:RU'>;</span><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+word-break:break-all'><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:RU'><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'>   </span>A</span><span lang=EN-US style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#009900;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>[</span><span lang=EN-US
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#333333;mso-ansi-language:EN-US;mso-fareast-language:RU'>min</span><span
+class=GramE><span lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#009900;mso-ansi-language:EN-US;mso-fareast-language:
+RU'>]</span><span lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#000066;mso-ansi-language:EN-US;mso-fareast-language:
+RU'>:=</span></span><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>c</span><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#000066;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>;</span><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+word-break:break-all'><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-ansi-language:EN-US;
+mso-fareast-language:RU'><span style='mso-spacerun:yes'>  </span></span><b><span
+lang=EN-US style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:black;mso-ansi-language:EN-US;mso-fareast-language:RU'>end</span></b><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#000066;mso-fareast-language:RU'>;</span><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#333333;mso-fareast-language:
+RU'><o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:42.55pt;mso-add-space:auto;text-align:justify;line-height:18.0pt;
+mso-line-height-rule:exactly'><b><span lang=EN-US style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>end</span></b><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#000066;mso-fareast-language:
+RU'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal;
+background:white'><b style='mso-bidi-font-weight:normal'><span
+style='mso-fareast-font-family:"Times New Roman";color:black;mso-color-alt:
+windowtext;mso-fareast-language:RU'>Сортировка методом «Пузырька»</span></b><b
+style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:RU'><o:p></o:p></span></b></p>
+
+<p style='text-align:justify'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'>Сортировка пузырьком&nbsp;(<span class=SpellE>bubble</span>
+<span class=SpellE>sort</span>) </span></b><span style='font-size:14.0pt'>-
+один из самых простых для понимания методов сортировки.<o:p></o:p></span></p>
+
+<p style='text-align:justify'><span style='font-size:14.0pt'>Алгоритм выполняет
+повторяющиеся проходы по массиву. Во время каждого прохода сортируемые элементы
+попарно сравниваются, <span class=GramE>и</span> если порядок в паре неверный,
+элементы меняются местами (отсюда второе название -&nbsp;<b>сортировка простыми
+обменами</b>).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal;background:
+white'><b style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:9.0pt;
+margin-left:18.0pt;text-align:justify;text-indent:-18.0pt;line-height:normal;
+mso-list:l0 level1 lfo6;tab-stops:list 36.0pt;background:white'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:14.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-fareast-language:
+RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
+color:black;mso-color-alt:windowtext;mso-fareast-language:RU'>В таком типе
+сортировок массив представляется в виде воды, маленькие элементы — пузырьки в
+воде, которые всплывают наверх (самые легкие).</span><span style='mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:9.0pt;
+margin-left:18.0pt;text-align:justify;text-indent:-18.0pt;line-height:normal;
+mso-list:l0 level1 lfo6;tab-stops:list 36.0pt;background:white'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:14.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-fareast-language:
+RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
+color:black;mso-color-alt:windowtext;mso-fareast-language:RU'>При первой
+итерации цикла элементы массива попарно сравниваются между собой: предпоследний
+с последним, пред предпоследний с предпоследним и т.д. Если предшествующий
+элемент оказывается больше последующего, то производится их обмен.</span><span
+style='mso-fareast-font-family:"Times New Roman";mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:9.0pt;
+margin-left:18.0pt;text-align:justify;text-indent:-18.0pt;line-height:normal;
+mso-list:l0 level1 lfo6;tab-stops:list 36.0pt;background:white'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:14.0pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-fareast-language:
+RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
+color:black;mso-color-alt:windowtext;mso-fareast-language:RU'>При второй
+итерации цикла нет надобности сравнивать последний элемент с предпоследним.
+Последний элемент уже стоит на своем месте, он самый большой. Значит, число
+сравнений будет на одно меньше. То же самое касается каждой последующей
+итерации.</span><span style='mso-fareast-font-family:"Times New Roman";
+mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p style='text-align:justify'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_2"
+ o:spid="_x0000_s1026" type="#_x0000_t75" alt="сортировка методом пузырька"
+ href="https://labs-org.ru/wp-content/uploads/2016/04/1-64.png" style='position:absolute;
+ left:0;text-align:left;margin-left:416.55pt;margin-top:117.7pt;width:467.75pt;
+ height:126.35pt;z-index:251660288;visibility:visible;mso-wrap-style:square;
+ mso-width-percent:0;mso-height-percent:0;mso-wrap-distance-left:9pt;
+ mso-wrap-distance-top:0;mso-wrap-distance-right:9pt;
+ mso-wrap-distance-bottom:0;mso-position-horizontal:right;
+ mso-position-horizontal-relative:margin;mso-position-vertical:absolute;
+ mso-position-vertical-relative:text;mso-width-percent:0;mso-height-percent:0;
+ mso-width-relative:page;mso-height-relative:page' o:button="t">
+ <v:fill o:detectmouseclick="t"/>
+ <v:imagedata src="Сортировка%20массива.files/image003.png" o:title="сортировка методом пузырька"/>
+ <w:wrap type="square" anchorx="margin"/>
+</v:shape><![endif]--><![if !vml]><a
+href="https://labs-org.ru/wp-content/uploads/2016/04/1-64.png"><img border=0
+width=624 height=169 src="Сортировка%20массива.files/image004.png" align=right
+hspace=12 alt="сортировка методом пузырька" title="" v:shapes="Рисунок_x0020_2"></a><![endif]><b><span
+style='font-size:13.5pt;font-family:"Verdana",sans-serif;color:#555555;
+mso-font-kerning:18.0pt'>Сортировка обменом.</span></b><span style='font-family:
+"Verdana",sans-serif;color:#555555'> </span>Алгоритм<span class=GramE>:&nbsp;Берем</span>
+элемент массива, сравниваем со следующим, если наш элемент, больше следующего
+элемента, то мы их меняем местами. После прохождения всего массива, мы можем
+быть уверены, что максимальный элемент будет &quot;вытолкнут&quot; - и стоять
+самым последним. Таким образом, один элемент у нас уже точно стоит на своём
+месте. Т.к. нам надо их все расположить на свои места, следовательно, мы должны
+повторить данную операцию, столько раз, сколько у нас элементов массива минус
+1. Последний элемент встанет автоматически, если остальные стоят на своих
+местах.<span style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;text-align:justify;text-indent:42.55pt;line-height:18.0pt;
+mso-line-height-rule:exactly;background:white'><span style='font-size:14.0pt;
+color:black;mso-color-alt:windowtext'>Суть метода в <span class=GramE>том</span>
+чтобы менять местами СОСЕДНИЕ числа пока наибольшее не окажется справа, но это
+для сортировки по возрастанию.</span><span style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p style='margin:0cm;text-align:justify;background:white'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin:0cm;text-align:justify;background:white'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>Program </span></b><span
+class=SpellE><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>sortpyzyrek</span></span><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>const<span
+style='mso-spacerun:yes'>   </span></span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>n <span
+class=GramE>=<span style='mso-spacerun:yes'>  </span><span style='color:darkgreen'>10</span></span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>var<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span></span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>a: <b>array</b>
+<b>of </b></span><span lang=EN-US style='font-family:"Courier New";color:blue;
+mso-ansi-language:EN-US'>integer</span><span lang=EN-US style='font-family:
+"Courier New";color:black;mso-ansi-language:EN-US'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span></span><span style='font-family:"Courier New";
+color:black'>i, j, k: </span><span class=SpellE><span style='font-family:"Courier New";
+color:blue'>integer</span></span><span style='font-family:"Courier New";
+color:black'>; </span><span style='font-family:"Courier New";color:green'>//к-дополнительная
+переменная для осуществления «поменять местами»<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span style='font-family:
+"Courier New";color:green'><span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>begin<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span></span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>randomize;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-tab-count:1'>    </span><span class=SpellE>setlength</span>(<span
+class=SpellE><span class=GramE>a,n</span></span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>     </span>write (</span><span lang=EN-US
+style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'>'</span><span
+style='font-family:"Courier New";color:blue'>Исходный</span><span
+style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'> </span><span
+style='font-family:"Courier New";color:blue'>массив</span><span lang=EN-US
+style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'>: '</span><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span><b>for </b><span class=SpellE><span
+class=GramE>i</span></span><span class=GramE> :</span>= </span><span
+lang=EN-US style='font-family:"Courier New";color:darkgreen;mso-ansi-language:
+EN-US'>0 </span><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'>to </span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>n-1 <b>do
+<o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span>begin<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span></span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>a[<span
+class=SpellE>i</span><span class=GramE>] :</span>= random(</span><span
+lang=EN-US style='font-family:"Courier New";color:darkgreen;mso-ansi-language:
+EN-US'>100</span><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>write (a[<span class=SpellE>i</span>], </span><span
+class=GramE><span lang=EN-US style='font-family:"Courier New";color:blue;
+mso-ansi-language:EN-US'>'<span style='mso-spacerun:yes'>  </span>'</span></span><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span></span><span class=SpellE><b><span
+style='font-family:"Courier New";color:black'>end</span></b></span><span
+style='font-family:"Courier New";color:black'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span style='font-family:
+"Courier New";color:black'><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>writeln</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span style='font-family:
+"Courier New";color:black'><span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span class=SpellE><span
+class=GramE><span style='font-family:"Courier New";color:black'>writeln</span></span></span><span
+class=GramE><span style='font-family:"Courier New";color:black'>(</span></span><span
+style='font-family:"Courier New";color:blue'>'Сортировка методом пузырька по
+возрастанию'</span><span style='font-family:"Courier New";color:black'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span style='font-family:
+"Courier New";color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span style='font-family:
+"Courier New";color:black'><span style='mso-spacerun:yes'>     </span></span><b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>for
+</span></b><span class=SpellE><span class=GramE><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>i</span></span></span><span
+class=GramE><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'> :</span></span><span lang=EN-US style='font-family:
+"Courier New";color:black;mso-ansi-language:EN-US'>= </span><span lang=EN-US
+style='font-family:"Courier New";color:darkgreen;mso-ansi-language:EN-US'>0 </span><b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>to
+</span></b><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>n-</span><span lang=EN-US style='font-family:"Courier New";
+color:darkgreen;mso-ansi-language:EN-US'>2 </span><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>do<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span>for </span></b><span class=GramE><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>j
+:</span></span><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>= </span><span lang=EN-US style='font-family:"Courier New";
+color:darkgreen;mso-ansi-language:EN-US'>0 </span><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>to </span></b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>n-</span><span
+style='font-family:"Courier New";color:black'>2</span><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>-<span
+class=SpellE>i</span> <b>do<o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>            </span>if </span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>a[j] &gt;
+a[j+</span><span lang=EN-US style='font-family:"Courier New";color:darkgreen;
+mso-ansi-language:EN-US'>1</span><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'>] <b>then<o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>            </span>begin<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>                </span></span></b><span class=GramE><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>k
+:</span></span><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>= a[j];<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>                </span>a[j<span class=GramE>] :</span>=
+a[j+</span><span lang=EN-US style='font-family:"Courier New";color:darkgreen;
+mso-ansi-language:EN-US'>1</span><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'>];<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>                </span>a[j+</span><span lang=EN-US
+style='font-family:"Courier New";color:darkgreen;mso-ansi-language:EN-US'>1</span><span
+class=GramE><span lang=EN-US style='font-family:"Courier New";color:black;
+mso-ansi-language:EN-US'>] :</span></span><span lang=EN-US style='font-family:
+"Courier New";color:black;mso-ansi-language:EN-US'>= k<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>            </span><b>end</b>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span>write (</span><span lang=EN-US
+style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'>'</span><span
+style='font-family:"Courier New";color:blue'>Отсортированный</span><span
+style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'> </span><span
+style='font-family:"Courier New";color:blue'>массив</span><span lang=EN-US
+style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'>: '</span><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>    </span><b>for </b><span class=SpellE>i</span> := </span><span
+lang=EN-US style='font-family:"Courier New";color:darkgreen;mso-ansi-language:
+EN-US'>0 </span><b><span lang=EN-US style='font-family:"Courier New";
+color:black;mso-ansi-language:EN-US'>to </span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>n-1 <b>do<o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span></span></b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>write (a[<span
+class=SpellE>i</span>]:</span><span lang=EN-US style='font-family:"Courier New";
+color:darkgreen;mso-ansi-language:EN-US'>4</span><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>     </span><span class=SpellE>writeln</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none'><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><span class=SpellE>readln</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>end</span></b><span
+lang=EN-US style='font-family:"Courier New";color:black;mso-ansi-language:EN-US'>.</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p style='margin:0cm;text-align:justify;text-indent:14.2pt;background:white'><span
+lang=EN-US style='font-size:13.5pt;font-family:"Tahoma",sans-serif;color:#474747;
+mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin:0cm;text-align:justify;text-indent:42.55pt;line-height:18.0pt;
+mso-line-height-rule:exactly;background:white'><span style='font-size:14.0pt;
+color:#474747'>Мы меняем соседние элементы местами,&nbsp;<strong>СОСЕДНИЕ!!!!!!</strong>,
+цикл до&nbsp;<strong>n-1</strong>, потому что у последнего элемента массива
+соседнего элемента нету.<o:p></o:p></span></p>
+
+<p style='margin:0cm;text-align:justify;text-indent:42.55pt;line-height:18.0pt;
+mso-line-height-rule:exactly;background:white'><span style='font-size:14.0pt;
+color:#474747'>Что же делает этот цикл, он само собой поменяет местами соседние
+элементы при выполнении условия, что левый больше правого, т.е. например <span
+class=GramE>( 3</span> , 2 ), 3 больше 2 значит поменяем местами.<o:p></o:p></span></p>
+
+<p align=center style='margin:0cm;text-align:center;line-height:18.0pt;
+mso-line-height-rule:exactly;background:white'><b><span style='font-size:14.0pt;
+color:#474747'>Сортировка стандартными процедурами<o:p></o:p></span></b></p>
+
+<p style='margin:0cm;text-align:justify;line-height:18.0pt;mso-line-height-rule:
+exactly;background:white'><span style='font-size:14.0pt;color:#474747'>Массивы
+содержат большое количество стандартных методов, в том числе и для сортировки:<o:p></o:p></span></p>
+
+<p style='margin:0cm;text-align:justify;line-height:18.0pt;mso-line-height-rule:
+exactly;background:white'><span class=SpellE><span style='font-size:14.0pt;
+color:#474747'>Sort</span></span><span style='font-size:14.0pt;color:#474747'>(a)
+- сортировка элементов по возрастанию<o:p></o:p></span></p>
+
+<p style='margin:0cm;text-align:justify;line-height:18.0pt;mso-line-height-rule:
+exactly;background:white'><span class=SpellE><span style='font-size:14.0pt;
+color:#474747'>SortDescending</span></span><span style='font-size:14.0pt;
+color:#474747'>(a) - сортировка элементов по убыванию<o:p></o:p></span></p>
+
+<p style='margin:0cm;text-align:justify;line-height:18.0pt;mso-line-height-rule:
+exactly;background:white'><span class=SpellE><span style='font-size:14.0pt;
+color:#474747'>Reverse</span></span><span style='font-size:14.0pt;color:#474747'>(a)
+- инвертирование элементов массива<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+18.0pt;mso-line-height-rule:exactly'>Пример использования:</p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:
+EN-US'>var<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:
+EN-US'><span style='mso-spacerun:yes'>  </span></span></b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>arr: <b>array of </b></span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:blue;mso-ansi-language:EN-US'>Integer</span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span>i, n: </span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:blue;mso-ansi-language:EN-US'>Integer</span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:
+EN-US'>begin<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:
+EN-US'><span style='mso-spacerun:yes'>  </span></span></b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>Randomize;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span></span><span class=SpellE><span class=GramE><span
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black'>Write</span></span></span><span class=GramE><span
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black'>(</span></span><span style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue'>'Введите размер массива '</span><span
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black'><span style='mso-spacerun:yes'> 
+</span></span><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'>ReadLn(n);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span><span class=GramE>SetLength(</span>arr, n);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span><b>for </b><span class=GramE>i :</span>= </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:darkgreen;mso-ansi-language:EN-US'>0 </span><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>to </span></b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>n - </span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:darkgreen;mso-ansi-language:EN-US'>1 </span><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>do<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:
+EN-US'><span style='mso-spacerun:yes'>  </span>begin<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:
+EN-US'><span style='mso-spacerun:yes'>    </span></span></b><span class=SpellE><span
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black'>arr</span></span><span style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black'>[i<span class=GramE>] :</span>= <span
+class=SpellE>Random</span>(</span><span style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:darkgreen'>100</span><span
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black'>); </span><span style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green'>// Заполнение массива случайными
+числами от 0 до 99<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green'><span style='mso-spacerun:yes'>   
+</span></span><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'>Write(arr[i],
+</span><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>' '</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;mso-ansi-language:EN-US'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span><b>end</b>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span>WriteLn;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span><span class=SpellE><span class=GramE>arr</span></span></span><span
+class=GramE><span style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black'>.</span><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:
+EN-US'>Sort</span></span><span style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black'>();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black'><span style='mso-spacerun:yes'> 
+</span></span><span class=SpellE><span class=GramE><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>WriteLn</span></span></span><span
+class=GramE><span style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black'>(</span></span><span style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:blue'>'Отсортированный массив:'</span><span
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black'><span style='mso-spacerun:yes'> 
+</span></span><b><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'>for </span></b><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:
+EN-US'>i</span></span></span><span class=GramE><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'> :</span></span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>= </span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:darkgreen;mso-ansi-language:EN-US'>0 </span><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>to </span></b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>n - </span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:darkgreen;mso-ansi-language:EN-US'>1 </span><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>do<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:
+EN-US'><span style='mso-spacerun:yes'>    </span></span></b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>Write(arr[i], </span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:blue;mso-ansi-language:EN-US'>' '</span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-ansi-language:EN-US'>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;line-height:normal;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>  </span></span><span class=SpellE><span
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black'>WriteLn</span></span><span style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;text-align:justify;line-height:
+18.0pt;mso-line-height-rule:exactly'><span class=SpellE><b><span
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black'>end</span></b></span><span style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black'>.</span></p>
+
+</div>
+
+</body>
+
+</html>
